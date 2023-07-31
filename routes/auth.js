@@ -10,6 +10,7 @@ router.post("/login", [
 router.post("/signup", [
     body("email").trim().notEmpty().escape().isEmail(),
     body("password").trim().notEmpty().escape().isLength({ min: 7 }),
+    body("username").trim().notEmpty().escape().isLength({ max: 10 }),
 ], signup);
 router.post("/deleteProfile/:userId", body("password").trim().notEmpty().escape().isLength({ min: 7 }), isAuth, deleteProfile);
 router.post("/changeEmail/:userId", [

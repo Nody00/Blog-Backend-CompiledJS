@@ -5,6 +5,10 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    username: {
+        type: String,
+        required: true,
+    },
     password: {
         type: String,
         required: true,
@@ -37,6 +41,12 @@ const userSchema = new Schema({
         {
             type: Schema.Types.ObjectId,
             ref: "Comment",
+        },
+    ],
+    chats: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Chat",
         },
     ],
 });
